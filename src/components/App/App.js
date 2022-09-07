@@ -4,28 +4,20 @@ import fetchData from '../../apiCalls';
 import Form from '../Form/Form'
 
 import TrickCards from '../TrickCards/TrickCards';
+import TrickCardHolder from '../TrickCardHolder/TrickCardHolder';
 
 class App extends Component {
   constructor( ) {
     super( )
     this.state = {
-      stance: '',
-      name: '',
-      obstacle: '',
-      tutorial: '',
-      id: ''
+      tricks: [ ] 
     }
   }
 
+
   componentDidMount = ( ) => {
     fetchData( )
-    .then( data => this.setState( { 
-      stance: data.stance, 
-      name: data.name, 
-      obstacle: data.obstacle, 
-      tutorial: data.tutorial, 
-      id: data 
-    } ) )
+    .then( data => this.setState( { tricks: data } ) )
   }
 
   render() {
@@ -35,7 +27,9 @@ class App extends Component {
 
         <Form />
 
-        <TrickCards />
+        {/* <TrickCards /> */}
+        <TrickCardHolder
+          tricks={ this.state.tricks }/>
 
       </div>
 
