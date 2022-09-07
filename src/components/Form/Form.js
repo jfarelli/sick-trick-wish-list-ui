@@ -41,7 +41,7 @@ class Form extends React.Component {
     render( ) {
         
         return ( 
-            <form>
+            <form className='form-container'>
                 
                 <select
                     name='stance'
