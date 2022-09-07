@@ -20,14 +20,18 @@ class App extends Component {
     .then( data => this.setState( { tricks: data } ) )
   }
 
+  addTrick = ( newTrick ) => {
+    this.setState( { tricks: [ ...this.state.tricks, newTrick ] } )
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
 
-        <Form />
+        <Form 
+          addTrick={ this.addTrick }/>
 
-        {/* <TrickCards /> */}
         <TrickCardHolder
           tricks={ this.state.tricks }/>
 

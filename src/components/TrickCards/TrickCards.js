@@ -1,10 +1,10 @@
 import './TrickCards.css'
 
-const TrickCards = ( { stance, trick, obstacle, tutorial, id } ) => {
+const TrickCards = ( { stance, name, obstacle, tutorial, id } ) => {
 
     return (
         <div className='trick-card'>
-            <p>{ `${stance} ${trick} ` }</p>
+            <p>{ `${ stance } ${ name }` }</p>
             <p>Obstacle: { obstacle }</p>
             <p>Link to Tutorial:</p>
             <a href={ tutorial }>{ tutorial }</a>

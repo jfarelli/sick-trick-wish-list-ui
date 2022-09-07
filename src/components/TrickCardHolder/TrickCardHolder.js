@@ -6,8 +6,8 @@ const TrickCardHolder = ( { tricks } ) => {
     const trickCard = tricks.map( trick => {
         return (
             <TrickCards
-                stance={ trick.stance  } 
-                trick={ trick.name }
+                stance={ trick.stance } 
+                name={ trick.name }
                 obstacle={ trick.obstacle }
                 tutorial={ trick.tutorial }
                 id={ trick.id }
